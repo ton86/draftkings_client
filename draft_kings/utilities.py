@@ -7,6 +7,8 @@ def identity(value):
 
 
 def from_unix_milliseconds_to_datetime(unix_milliseconds):
+    if unix_milliseconds is None:
+        unix_milliseconds = 0
     return datetime.fromtimestamp(unix_milliseconds / 1e3, tz=pytz.UTC)
 
 
